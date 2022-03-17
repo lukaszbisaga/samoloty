@@ -1,0 +1,47 @@
+:host {
+  cursor: pointer;
+}
+  
+.card-container {
+  padding: 15px;
+  position: relative;
+  margin-bottom: 20px;;
+}
+  
+.card-content {
+  padding: 30px 20px;
+  background: white;
+}
+  
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  height: 50px;
+  width: 50px;
+  background: white;
+  border-radius: 50%;
+  z-index: 10;
+  border: 1px solid rgb(128, 128, 128);
+  transform: translateX(-50%);
+  
+  mat-icon {
+    color: rgb(40, 160, 207);
+  }
+}
+  
+.time {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(128, 128, 128);
+  padding-top: 12px;
+}
+  
+.destination, .origin {
+  font-size: 26px;
+  font-weight: bold;
+  color: #5C6BC0;
+}

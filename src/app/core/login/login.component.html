@@ -1,0 +1,21 @@
+<div class="row justify-content-center login-container">
+    <div class="col-sm-4 shadow login-content">
+      <img src="./assets/images/logo.png" class="logo">
+      <h2>Super Loty</h2>
+      <h3>Logowanie / Rejestracja</h3>
+      <mat-form-field class="d-block">
+        <input matInput placeholder="Email" [(ngModel)]="credentials.email" required>
+        <mat-error>Email jest wymagany</mat-error>
+      </mat-form-field>
+      <mat-form-field class="d-block">
+        <input matInput [type]="hide ? 'password' : 'text'" placeholder="Hasło" [(ngModel)]="credentials.password" required>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error>Hasło jest wymagane</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="login()">ZALOGUJ SIĘ</button>
+      <p>Jeśli nie masz konta</p>
+      <button mat-raised-button color="accent" (click)="register()">ZAREJESTRUJ SIĘ</button>
+    </div>
+</div>

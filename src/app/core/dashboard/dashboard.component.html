@@ -1,0 +1,15 @@
+<mat-toolbar color="primary" class="mb-5">
+    <div class="container">
+        <div class="d-flex bd-highligh">
+            <div class="me-auto p-2 bd-highlight">
+                <img src="./assets/images/logo.png" class="logo" routerLink="/dashboard">
+                <span class="p-4 bd-highlight">Super Loty</span>
+            </div>
+            <span class="user-login p-4 bd-highlight" *ngIf="user | async as user">Zalogowano jako {{ user.email }}</span>
+            <mat-icon class="logout-icon p-4 bd-highlight" (click)="logout()">exit_to_app</mat-icon>    
+        </div>
+    </div>
+</mat-toolbar>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

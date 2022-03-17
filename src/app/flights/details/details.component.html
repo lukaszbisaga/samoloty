@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col">
+    <h2>
+      Szczegóły lotu  {{ flight.origin }} - {{ flight.destination }}
+      <mat-icon class="float-end cursor" (click)="close()">close</mat-icon>
+    </h2>
+    <p class="label">Kod: {{ flight.code }}</p>
+    <p class="label">Załoga:</p>
+    <ul>
+      <li *ngFor="let member of flight.crew">
+        {{ member.name }} - {{ member.job }}
+      </li>
+    </ul>
+    <button mat-raised-button color="primary" class="float-end" (click)="goToEditFlight()">Edytuj lot</button>
+  </div>
+</div>

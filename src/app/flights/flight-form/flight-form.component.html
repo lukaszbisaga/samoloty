@@ -1,0 +1,69 @@
+<form [formGroup]="form">
+  <div class="row">
+    <div class="col-sm-8">
+      <mat-form-field>
+        <input matInput formControlName="code" placeholder="Kod" #codeInput>
+        <mat-error>Kod jest wymagany</mat-error>
+        <mat-hint align="end">{{ codeInput.value.length }} / 7</mat-hint>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="origin" placeholder="Wylot z">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="destination" placeholder="Cel">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="departureTime" placeholder="Data/czas wylotu">
+      </mat-form-field>
+    </div>
+    <div class="col-sm-4">
+      <mat-form-field>
+        <input matInput formControlName="returnTime" placeholder="Data/czas przylotu">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <mat-form-field>
+        <textarea matInput formControlName="additionalInformation" placeholder="Dodatkowe informacje"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div formArrayName="crew" class="crew-container shadow" *ngFor="let crewMember of crew.controls;index as index">
+    <div class="row crew-header">
+      <div class="col d-flex bd-highligh mb-3">
+        <span class="me-auto p-2 bd-highlight">Członek załogi - {{ index + 1 }}</span>
+        <mat-icon class="p-2 bd-highlight delete-icon" (click)="removeCrewMember(index)">delete_forever</mat-icon>
+      </div>
+    </div>
+    <div class="row" [formGroupName]="index">
+      <div class="col-sm-5">
+        <mat-form-field>
+          <input matInput formControlName="name" placeholder="Imię i nazwisko">
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field>
+          <mat-select formControlName="job" placeholder="Pełniona funkcja">
+            <mat-option *ngFor="let job of jobs" [value]="job.value">{{ job.label }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col">
+      <button mat-raised-button color="primary" (click)="addCrewMember()">Dodaj nowego członka załogi</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Kreator nowego lotu</h2>
+<mat-dialog-content>
+  <app-flight-form #flightForm></app-flight-form>
+</mat-dialog-content>
+
+<div class="row">
+  <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+    <button mat-dialog-close class="btn btn-secondary me-md-2" type="button">Anuluj</button>
+    <button class="btn btn-primary" type="button" [disabled]="flightForm.form.invalid" (click)="createFlight()">Utwórz</button>
+  </div>
+</div>

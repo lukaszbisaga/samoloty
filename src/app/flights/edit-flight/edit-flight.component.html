@@ -1,0 +1,17 @@
+<div class="container edit">
+  <div class="row justify-content-center login-container">
+    <div class="col-9">
+      <h2>Edycja lotu <strong>{{ flight?.code }}</strong></h2>
+    </div>
+    <div class="col-3">
+      <mat-icon class="float-end m-2" (click)="removeFlight()" id="remove-btn">delete_forever</mat-icon>
+    </div>
+  </div>
+  <app-flight-form #flightForm [editMode]="true"></app-flight-form>
+  </div>
+<div class="row">
+  <div class="col d-grid gap-2 d-md-flex justify-content-md-end">
+      <button class="btn btn-secondary me-md-2" type="button" (click)="goToDashboard()">Anuluj</button>
+      <button class="btn btn-primary" type="button" (click)="editFlight()">Zapisz</button>
+  </div>
+</div>

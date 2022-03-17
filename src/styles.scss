@@ -1,0 +1,18 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  background: rgb(230, 225, 225);
+}
+
+.toast-success {
+  background: #82c07e;
+}
+  
+.toast-error {
+  background: #ff0900;
+}
+
+.btn-primary {
+  background-color: #3949AB !important;
+  border-color: #3949AB !important;
+}
